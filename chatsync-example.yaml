@@ -14,3 +14,8 @@ providers:
 - type: gitter
   token: xxx
   room: xxxx
+- type: matrix
+  username: xxx
+  password: xxx
+  homeserver: https://matrix.org
+  room: "!xxx:matrix.org"
