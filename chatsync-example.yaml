@@ -1,0 +1,16 @@
+# Example config
+providers:
+- type: slack
+  token: xoxb-xxxx
+  channel: CFHQHD77Y
+- type: slack
+  token: xoxb-xxxx
+  channel: CFFPW5PQR
+- type: irc
+  server: chat.freenode.net
+  port: 6667
+  channel: "#channelname"
+  nick: "botname"
+- type: gitter
+  token: xxx
+  room: xxxx
