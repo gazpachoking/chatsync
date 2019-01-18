@@ -34,7 +34,8 @@ class Provider(object):
                                  params={"filter": '{"room":{"timeline":{"limit":1}}}'})
         next_batch = r['next_batch']
         while True:
-            r = await self._api_call(client, 'get', "/_matrix/client/r0/sync", params={"since": next_batch})
+            r = await self._api_call(client, 'get', "/_matrix/client/r0/sync",
+                                     params={"since": next_batch, "timeout": 200000})
             next_batch = r['next_batch']
             if self.config["room"] not in r["rooms"]["join"]:
                 continue
