@@ -2,6 +2,8 @@ import json
 
 
 class Provider(object):
+    name = "gitter"
+
     def __init__(self, config):
         self.config = config
         self.headers = {

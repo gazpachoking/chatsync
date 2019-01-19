@@ -4,6 +4,8 @@ import aiohttp
 
 
 class Provider(object):
+    name = "slack"
+
     def __init__(self, config):
         self.token = config["token"]
         self.channel = config["channel"]

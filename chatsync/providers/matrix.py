@@ -2,6 +2,8 @@ from urllib.parse import quote
 
 
 class Provider(object):
+    name = "matrix"
+
     def __init__(self, config):
         self.config = config
         self.token = None
