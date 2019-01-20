@@ -56,14 +56,14 @@ class Provider(object):
         await self.connect(client)
         while True:
             try:
-                r = await client.get('https://stream.gitter.im/v1/rooms/{}/chatMessages'.format(room_id),
+                r = await client.get('https://stream.gitter.im/v1/rooms/{}/chatMessages'.format(self.room_id),
                                      headers=self.headers, timeout=None, raise_for_status=True)
                 while True:
                     data = await r.content.readline()
                     if not data.strip():
                         continue
                     gitter_msg = json.loads(data)
-                    if gitter_msg["fromUser"]["id"] == bot_id:
+                    if gitter_msg["fromUser"]["id"] == self.bot_id:
                         continue
                     yield {
                         "user": gitter_msg["fromUser"]["username"],
