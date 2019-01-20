@@ -1,0 +1,19 @@
+[build-system]
+requires = ["poetry>=0.12.11"]
+build-backend = "poetry.masonry.api"
+
+[tool.poetry]
+name = "chatsync"
+version = "0.1.0"
+description = "Sync chat between various chat sources."
+authors = ["Chase Sterling <chase.sterling@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = ">=3.6"
+aiohttp = "^3.5"
+PyYAML = "^3.13"
+irc = "^17.0"
+
+#[tool.poetry.dev-dependencies]
+#pytest = "^3.5"
