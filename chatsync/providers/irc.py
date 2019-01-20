@@ -1,6 +1,10 @@
 import asyncio
+import logging
 
 from irc.client_aio import AioSimpleIRCClient
+
+
+log = logging.getLogger('chatsync.irc')
 
 
 class IRCClient(AioSimpleIRCClient):
@@ -13,6 +17,7 @@ class IRCClient(AioSimpleIRCClient):
     async def connect(self):
         """Connect to the server and wait until we have joined the selected channel."""
         if not self.connection.connected:
+            log.info('Connecting to IRC server %s', self.config["server"])
             self.ready.clear()
             await self.connection.connect(
                 self.config["server"], self.config["port"], self.config["nick"], self.config.get("password")
@@ -26,6 +31,7 @@ class IRCClient(AioSimpleIRCClient):
         connection.join(self.config["channel"])
 
     def on_join(self, connection, event):
+        log.info("Joined channel %s", self.config["channel"])
         self.ready.set()
 
     def on_pubmsg(self, connection, event):

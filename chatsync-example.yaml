@@ -19,3 +19,5 @@ providers:
   password: xxx
   homeserver: https://matrix.org
   room: "!xxx:matrix.org"
+logfile: chatsync.log
+loglevel: DEBUG

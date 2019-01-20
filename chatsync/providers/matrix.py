@@ -1,4 +1,8 @@
+import logging
 from urllib.parse import quote
+
+
+log = logging.getLogger('chatsync.matrix')
 
 
 class Provider(object):

@@ -15,5 +15,8 @@ aiohttp = "^3.5"
 PyYAML = "^3.13"
 irc = "^17.0"
 
+[tool.poetry.scripts]
+chatsync = 'chatsync:main'
+
 #[tool.poetry.dev-dependencies]
 #pytest = "^3.5"
